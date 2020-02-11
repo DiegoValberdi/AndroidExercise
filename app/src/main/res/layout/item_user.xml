@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginBottom="5dp"
+    android:background="#720D5D">
+
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="64dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="43dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textColor="#D3FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="96dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/txtId"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtBirthdate"
+        android:layout_width="98dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtId" />
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/baseline_delete_black_36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
