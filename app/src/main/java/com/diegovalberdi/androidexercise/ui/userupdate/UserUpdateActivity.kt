@@ -42,8 +42,6 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
         val presenter = UserUpdatePresenter(this, remoteRepository)
 
 
-
-
         txtViewTitle.setText("Update ${userName}")
 
         val calendar = Calendar.getInstance()
@@ -57,7 +55,7 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
             val datePickerDialog = DatePickerDialog(
                 this,
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
-                    datePicked = "${mDay}/${mMonth}/${mYear}"
+                    datePicked = "${mMonth+1}/${mDay}/${mYear}"
                     txtBirthdate.setText("Your birthdate is: " + datePicked)
                 },
                 year,
@@ -70,11 +68,11 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
         btnAccept.setOnClickListener {
             var newUserName = txtFieldName.text.toString()
 
-            if (newUserName == null) {
+            if (newUserName == "") {
                 newUserName = userName
             }
             val user = User(userId, newUserName, datePicked)
-            presenter.onAcceptClicked(user)
+            presenter.updateUser(user)
             finish()
         }
 

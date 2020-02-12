@@ -10,10 +10,10 @@ import kotlinx.coroutines.withContext
 class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepository) {
 
     fun init() {
-        showUsersList()
+        getAllUsers()
     }
 
-    fun onSearchClicked(userId: Int?) {
+    fun searchUserById(userId: Int?) {
         if (userId == null) {
             view.showMessage("Introduce an id for me to do my job please")
         } else {
@@ -31,7 +31,7 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
         }
     }
 
-    fun showUsersList() {
+    fun getAllUsers() {
         CoroutineScope(Dispatchers.IO).launch {
             val users = remoteRepository.getAll()
             withContext(Dispatchers.Main) {
@@ -44,17 +44,17 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
         }
     }
 
-    fun onDeleteClicked(userId: Int) {
+    fun deleteSelectedUser(userId: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             val resultMessage = remoteRepository.deleteOne(userId)
             withContext(Dispatchers.Main) {
                 view.showMessage(resultMessage)
-                showUsersList()
+                getAllUsers()
             }
         }
     }
 
-    fun onUserClicked(user: User) {
+    fun goToUserUpdate(user: User) {
         view.openUserUpdate(user)
     }
 }

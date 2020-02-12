@@ -48,7 +48,7 @@ class UserListFragment : Fragment(), UserListView {
         )
         usersRecyclerView.adapter = usersAdapter
         btnSearch.setOnClickListener {
-            presenter.onSearchClicked(view.txtFieldSearch.text.toString().toIntOrNull())
+            presenter.searchUserById(view.txtFieldSearch.text.toString().toIntOrNull())
         }
         presenter.init()
 
@@ -74,7 +74,7 @@ class UserListFragment : Fragment(), UserListView {
         val id = item.getItemId()
 
         if (id == R.id.action_refresh) {
-            presenter.showUsersList()
+            presenter.getAllUsers()
             return true
         }
         return super.onOptionsItemSelected(item)
@@ -83,7 +83,8 @@ class UserListFragment : Fragment(), UserListView {
     override fun showMessage(message: String) {
         val toastMessage = Toast.makeText(
             this.context,
-            message, Toast.LENGTH_SHORT)
+            message, Toast.LENGTH_SHORT
+        )
         toastMessage.show()
     }
 

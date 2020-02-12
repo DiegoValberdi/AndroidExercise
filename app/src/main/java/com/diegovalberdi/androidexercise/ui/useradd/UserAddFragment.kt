@@ -57,10 +57,8 @@ class UserAddFragment : Fragment(), UserAddView {
             val datePickerDialog = DatePickerDialog(
                 view.context,
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
-                    datePicked = "${mDay}/${mMonth}/${mYear}"
-
+                    datePicked = "${mMonth + 1}/${mDay}/${mYear}"
                     txtBirthdate.setText("Your birthdate is: " + datePicked)
-
                 },
                 year,
                 month,
@@ -83,7 +81,7 @@ class UserAddFragment : Fragment(), UserAddView {
             }
             if (allFieldsCompleted) {
                 val user = User(0, newUserName, datePicked)
-                presenter.onAcceptClicked(user)
+                presenter.addUser(user)
             }
         }
 
