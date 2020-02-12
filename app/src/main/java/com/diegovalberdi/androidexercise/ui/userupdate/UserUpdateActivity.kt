@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.widget.*
 
 import androidx.appcompat.app.AppCompatActivity
-import com.diegovalberdi.androidexercise.R
 import com.diegovalberdi.androidexercise.data.remote.RemoteRepository
 import com.diegovalberdi.androidexercise.data.remote.RetrofitFactory
 import com.diegovalberdi.androidexercise.data.remote.RetrofitRemoteRepository
 import com.diegovalberdi.androidexercise.model.User
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
+import android.content.DialogInterface
+
+import androidx.fragment.app.DialogFragment
+
 
 class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
 
@@ -23,14 +26,14 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_update)
+        setContentView(com.diegovalberdi.androidexercise.R.layout.activity_user_update)
 
 
-        txtFieldName = findViewById(R.id.txtFieldName)
-        txtBirthdate = findViewById(R.id.txtBirthdate)
-        txtViewTitle = findViewById(R.id.txtViewTitle)
-        btnAccept = findViewById(R.id.btnAccept)
-        btnCalendar = findViewById(R.id.btnCalendar)
+        txtFieldName = findViewById(com.diegovalberdi.androidexercise.R.id.txtFieldName)
+        txtBirthdate = findViewById(com.diegovalberdi.androidexercise.R.id.txtBirthdate)
+        txtViewTitle = findViewById(com.diegovalberdi.androidexercise.R.id.txtViewTitle)
+        btnAccept = findViewById(com.diegovalberdi.androidexercise.R.id.btnAccept)
+        btnCalendar = findViewById(com.diegovalberdi.androidexercise.R.id.btnCalendar)
 
         val userId = intent.extras?.getInt("user_id")!!
         val userName = intent.extras?.getString("user_name")!!
@@ -72,9 +75,10 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
                 newUserName = userName
             }
             val user = User(userId, newUserName, datePicked)
-            presenter.updateUser(user)
+            presenter.onAcceptClicked(user)
             finish()
         }
+
 
     }
 

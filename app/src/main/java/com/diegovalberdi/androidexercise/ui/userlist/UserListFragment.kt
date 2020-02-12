@@ -48,7 +48,7 @@ class UserListFragment : Fragment(), UserListView {
         )
         usersRecyclerView.adapter = usersAdapter
         btnSearch.setOnClickListener {
-            presenter.searchUserById(view.txtFieldSearch.text.toString().toIntOrNull())
+            presenter.onSearchClicked(view.txtFieldSearch.text.toString().toIntOrNull())
         }
         presenter.init()
 

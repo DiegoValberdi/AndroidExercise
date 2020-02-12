@@ -40,8 +40,8 @@ class UsersAdapter(private val presenter: UserListPresenter) :
             txtId.text = user.id.toString()
             txtBirthdate.text = user.birthdate
             txtName.text = user.name
-            btnDelete.setOnClickListener { presenter.deleteSelectedUser(user.id) }
-            this.itemView.setOnClickListener { presenter.goToUserUpdate(user) }
+            btnDelete.setOnClickListener { presenter.onDeleteClicked(user.id) }
+            this.itemView.setOnClickListener { presenter.onUserClicked(user) }
         }
 
         companion object {

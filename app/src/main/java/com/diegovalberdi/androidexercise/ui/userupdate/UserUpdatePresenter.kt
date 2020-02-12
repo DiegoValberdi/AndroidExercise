@@ -12,7 +12,7 @@ class UserUpdatePresenter(
     val remoteRepository: RemoteRepository
 ) {
 
-    fun updateUser(user: User) {
+    fun onAcceptClicked(user: User) {
         CoroutineScope(Dispatchers.IO).launch {
             val resultMessage = remoteRepository.putOne(user)
             withContext(Dispatchers.Main) {

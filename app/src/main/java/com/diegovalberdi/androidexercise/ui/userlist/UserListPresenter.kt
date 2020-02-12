@@ -13,7 +13,7 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
         getAllUsers()
     }
 
-    fun searchUserById(userId: Int?) {
+    fun onSearchClicked(userId: Int?) {
         if (userId == null) {
             view.showMessage("Introduce an id for me to do my job please")
         } else {
@@ -44,7 +44,7 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
         }
     }
 
-    fun deleteSelectedUser(userId: Int) {
+    fun onDeleteClicked(userId: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             val resultMessage = remoteRepository.deleteOne(userId)
             withContext(Dispatchers.Main) {
@@ -54,7 +54,7 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
         }
     }
 
-    fun goToUserUpdate(user: User) {
+    fun onUserClicked(user: User) {
         view.openUserUpdate(user)
     }
 }

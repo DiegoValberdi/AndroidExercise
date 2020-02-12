@@ -81,7 +81,7 @@ class UserAddFragment : Fragment(), UserAddView {
             }
             if (allFieldsCompleted) {
                 val user = User(0, newUserName, datePicked)
-                presenter.addUser(user)
+                presenter.onAcceptClicked(user)
             }
         }
 

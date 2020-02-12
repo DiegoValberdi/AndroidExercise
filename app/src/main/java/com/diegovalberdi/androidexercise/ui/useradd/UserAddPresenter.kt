@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 
 class UserAddPresenter(val view: UserAddView, val remoteRepository: RemoteRepository) {
 
-    fun addUser(user: User) {
+    fun onAcceptClicked(user: User) {
         CoroutineScope(Dispatchers.IO).launch {
             val resultMessage = remoteRepository.postOne(user)
             withContext(Dispatchers.Main) {
