@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.useradd.UserAddFragment"/>
+        <activity android:name=".ui.userlist.UserListFragment"/>
         <activity android:name=".ui.userupdate.UserUpdateActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
