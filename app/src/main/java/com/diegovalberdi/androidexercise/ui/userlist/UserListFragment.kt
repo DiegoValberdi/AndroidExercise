@@ -1,6 +1,5 @@
 package com.diegovalberdi.androidexercise.ui.userlist
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -12,11 +11,9 @@ import com.diegovalberdi.androidexercise.data.remote.RetrofitRemoteRepository
 import com.diegovalberdi.androidexercise.model.User
 import com.diegovalberdi.androidexercise.ui.userupdate.UserUpdateActivity
 import kotlinx.android.synthetic.main.fragment_user_list.view.*
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.diegovalberdi.androidexercise.R
 import com.diegovalberdi.androidexercise.data.remote.RemoteRepository
-import com.diegovalberdi.androidexercise.ui.useradd.UserAddPresenter
 
 
 class UserListFragment : Fragment(), UserListView {
@@ -86,8 +83,7 @@ class UserListFragment : Fragment(), UserListView {
     override fun showMessage(message: String) {
         val toastMessage = Toast.makeText(
             this.context,
-            message, Toast.LENGTH_SHORT
-        )
+            message, Toast.LENGTH_SHORT)
         toastMessage.show()
     }
 

@@ -15,8 +15,6 @@ import com.diegovalberdi.androidexercise.data.remote.RemoteRepository
 import com.diegovalberdi.androidexercise.data.remote.RetrofitFactory
 import com.diegovalberdi.androidexercise.data.remote.RetrofitRemoteRepository
 import com.diegovalberdi.androidexercise.model.User
-import com.diegovalberdi.androidexercise.ui.userlist.UserListPresenter
-import com.diegovalberdi.androidexercise.ui.userupdate.UserUpdatePresenter
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 

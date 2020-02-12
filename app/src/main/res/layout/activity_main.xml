@@ -26,6 +26,7 @@
         android:layout_height="60dp"
         android:background="#4E0D3A"
         android:foregroundGravity="center"
+        app:itemIconTint="@color/design_default_color_on_primary"
         app:itemTextColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

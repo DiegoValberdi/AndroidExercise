@@ -1,7 +1,5 @@
 package com.diegovalberdi.androidexercise.data.remote
 
-import android.accounts.NetworkErrorException
-import android.util.Log
 import com.diegovalberdi.androidexercise.model.User
 
 

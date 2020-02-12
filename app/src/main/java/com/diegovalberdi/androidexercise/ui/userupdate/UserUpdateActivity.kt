@@ -1,7 +1,6 @@
 package com.diegovalberdi.androidexercise.ui.userupdate
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 
@@ -11,14 +10,12 @@ import com.diegovalberdi.androidexercise.data.remote.RemoteRepository
 import com.diegovalberdi.androidexercise.data.remote.RetrofitFactory
 import com.diegovalberdi.androidexercise.data.remote.RetrofitRemoteRepository
 import com.diegovalberdi.androidexercise.model.User
-import com.diegovalberdi.androidexercise.ui.userlist.UserListFragment
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.android.synthetic.main.fragment_user_list.view.*
 import java.util.*
 
 class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
-    private lateinit var txtBirthdate: TextView
 
+    private lateinit var txtBirthdate: TextView
     private lateinit var txtViewTitle: TextView
     private lateinit var btnAccept: Button
     private lateinit var btnCalendar: ImageButton

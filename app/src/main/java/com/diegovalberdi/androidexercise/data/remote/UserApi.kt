@@ -8,24 +8,24 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
 
 interface UserApi {
-    @GET("api/User")
+    @GET("User")
     suspend fun getAll(): Response<List<User>>
 
-    @GET("api/User/{id}")
+    @GET("User/{id}")
     suspend fun getOne(@Path("id") userId: Int): Response<User>
 
-    @POST("api/User")
+    @POST("User")
     suspend fun postOne(@Body user: User): Response<Void>
 
-    @PUT("api/User")
+    @PUT("User")
     suspend fun putOne(@Body user: User): Response<Void>
 
-    @DELETE("api/User/{id}")
+    @DELETE("User/{id}")
     suspend fun deleteOne(@Path("id") userId: Int): Response<Void>
 }
 
 object RetrofitFactory {
-    const val BASE_URL = "http://hello-world.innocv.com/"
+    const val BASE_URL = "http://hello-world.innocv.com/api/"
 
     fun getUserApi(): UserApi {
         return Retrofit.Builder()
