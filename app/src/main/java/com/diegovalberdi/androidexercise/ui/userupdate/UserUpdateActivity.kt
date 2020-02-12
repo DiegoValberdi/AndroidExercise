@@ -34,6 +34,7 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
         txtViewTitle = findViewById(R.id.txtViewTitle)
         btnAccept = findViewById(R.id.btnAccept)
         btnCalendar = findViewById(R.id.btnCalendar)
+
         val userId = intent.extras?.getInt("user_id")!!
         val userName = intent.extras?.getString("user_name")!!
         val userBirthdate = intent.extras?.getString("user_birthdate")!!
@@ -55,27 +56,33 @@ class UserUpdateActivity : AppCompatActivity(), UserUpdateView {
 
         var datePicked = userBirthdate
 
-        btnCalendar.setOnClickListener{
-            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view,mYear,mMonth,mDay ->
-                datePicked = "${mDay}/${mMonth}/${mYear}"
-                txtBirthdate.setText("Your birthdate is: " + datePicked)
-            },year,month,day)
-            dpd.show()
+        btnCalendar.setOnClickListener {
+            val datePickerDialog = DatePickerDialog(
+                this,
+                DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                    datePicked = "${mDay}/${mMonth}/${mYear}"
+                    txtBirthdate.setText("Your birthdate is: " + datePicked)
+                },
+                year,
+                month,
+                day
+            )
+            datePickerDialog.show()
         }
 
-        btnAccept.setOnClickListener{
+        btnAccept.setOnClickListener {
             var newUserName = txtFieldName.text.toString()
 
-            if (newUserName == null){
-                newUserName =userName
+            if (newUserName == null) {
+                newUserName = userName
             }
-            val user = User(userId,newUserName,datePicked)
+            val user = User(userId, newUserName, datePicked)
             presenter.onAcceptClicked(user)
             finish()
         }
 
-
     }
+
     override fun showMessage(message: String) {
 
         val toastMessage = Toast.makeText(

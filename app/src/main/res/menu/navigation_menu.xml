@@ -4,11 +4,12 @@
 
     <item
         android:id="@+id/fragment_user_list"
+        android:icon="@drawable/baseline_view_list_white_18dp"
         android:title="List"
-        android:visible="true"
         app:showAsAction="always" />
     <item
         android:id="@+id/fragment_add"
+        android:icon="@drawable/baseline_add_circle_outline_white_18dp"
         android:title="Add"
         android:visible="true"
         app:showAsAction="always" />

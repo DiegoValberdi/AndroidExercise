@@ -27,7 +27,7 @@ class UsersAdapter(private val presenter: UserListPresenter) :
     override fun getItemCount(): Int = users.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(users[position],presenter)
+        holder.bind(users[position], presenter)
     }
 
     class ViewHolder private constructor(view: View) : RecyclerView.ViewHolder(view) {
@@ -37,12 +37,12 @@ class UsersAdapter(private val presenter: UserListPresenter) :
         private val btnDelete: ImageButton = view.findViewById(R.id.btnDelete)
 
 
-        fun bind(user: User,presenter: UserListPresenter) {
+        fun bind(user: User, presenter: UserListPresenter) {
             txtId.text = user.id.toString()
             txtBirthdate.text = user.birthdate
             txtName.text = user.name
-            btnDelete.setOnClickListener{presenter.onDeleteClicked(user.id)}
-            this.itemView.setOnClickListener { presenter.onUserClicked(user)}
+            btnDelete.setOnClickListener { presenter.onDeleteClicked(user.id) }
+            this.itemView.setOnClickListener { presenter.onUserClicked(user) }
         }
 
         companion object {

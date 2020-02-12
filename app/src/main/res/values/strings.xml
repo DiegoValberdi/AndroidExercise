@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Android Exercise</string>
+    <string name="introduce_birthdate">Introduce your birthdate</string>
+    <string name="create_user">Create a user</string>
+    <string name="introduce_name">Introduce a user name</string>
+    <string name="accept">Accept</string>
+    <string name="introduce_id">Introduce the id of the user</string>
 </resources>

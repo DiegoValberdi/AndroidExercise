@@ -15,7 +15,7 @@ interface UserApi {
     suspend fun getOne(@Path("id") userId: Int): Response<User>
 
     @POST("api/User")
-    suspend fun postOne(@Body user: User) : Response<Void>
+    suspend fun postOne(@Body user: User): Response<Void>
 
     @PUT("api/User")
     suspend fun putOne(@Body user: User): Response<Void>

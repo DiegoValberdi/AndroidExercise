@@ -21,11 +21,10 @@ import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
 
-class UserAddFragment: Fragment(),UserAddView {
+class UserAddFragment : Fragment(), UserAddView {
 
     private lateinit var presenter: UserAddPresenter
     private lateinit var txtBirthdate: TextView
-    private lateinit var txtViewTitle: TextView
     private lateinit var btnAccept: Button
     private lateinit var btnCalendar: ImageButton
     private lateinit var txtFieldName: TextInputEditText
@@ -37,7 +36,6 @@ class UserAddFragment: Fragment(),UserAddView {
         val view = inflater.inflate(R.layout.fragment_add, container, false)
         txtFieldName = view.findViewById(R.id.txtFieldName)
         txtBirthdate = view.findViewById(R.id.txtBirthdate)
-        txtViewTitle = view.findViewById(R.id.txtViewTitle)
         btnAccept = view.findViewById(R.id.btnAccept)
         btnCalendar = view.findViewById(R.id.btnCalendar)
 
@@ -57,25 +55,31 @@ class UserAddFragment: Fragment(),UserAddView {
 
         var datePicked = ""
 
-        btnCalendar.setOnClickListener{
-            val datePickerDialog = DatePickerDialog(view.context, DatePickerDialog.OnDateSetListener{view, mYear, mMonth, mDay ->
-                datePicked = "${mDay}/${mMonth}/${mYear}"
+        btnCalendar.setOnClickListener {
+            val datePickerDialog = DatePickerDialog(
+                view.context,
+                DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                    datePicked = "${mDay}/${mMonth}/${mYear}"
 
-                txtBirthdate.setText("Your birthdate is: " + datePicked)
+                    txtBirthdate.setText("Your birthdate is: " + datePicked)
 
-            },year,month,day)
+                },
+                year,
+                month,
+                day
+            )
             datePickerDialog.show()
         }
 
-        btnAccept.setOnClickListener{
+        btnAccept.setOnClickListener {
             var newUserName = txtFieldName.text.toString()
             var allFieldsCompleted = true
 
-            if (newUserName == ""){
+            if (newUserName == "") {
                 showMessage("Please introduce a username")
                 allFieldsCompleted = false
             }
-            if (datePicked == ""){
+            if (datePicked == "") {
                 showMessage("Please select a birthdate")
                 allFieldsCompleted = false
             }

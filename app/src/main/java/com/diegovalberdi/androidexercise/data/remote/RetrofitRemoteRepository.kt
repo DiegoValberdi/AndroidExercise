@@ -16,6 +16,7 @@ class RetrofitRemoteRepository(val userApi: UserApi) : RemoteRepository {
             false -> return null
         }
     }
+
     override suspend fun putOne(user: User): String {
         val updateOneUserResponse = userApi.putOne(user)
         when (updateOneUserResponse.isSuccessful) {

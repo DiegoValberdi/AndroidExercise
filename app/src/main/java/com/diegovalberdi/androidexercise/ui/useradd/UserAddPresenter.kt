@@ -20,5 +20,5 @@ class UserAddPresenter(val view: UserAddView, val remoteRepository: RemoteReposi
 }
 
 interface UserAddView {
-    fun showMessage(message:String)
+    fun showMessage(message: String)
 }

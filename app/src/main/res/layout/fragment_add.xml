@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5D1049">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="vertical"
@@ -17,7 +18,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="30dp"
-            android:hint="Introduce a user name"
+            android:hint="@string/introduce_name"
             android:textColorHint="@color/colorAccent"
             app:boxStrokeColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,9 +38,9 @@
             android:id="@+id/btnAccept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="70dp"
-            android:text="Accept"
+            android:text="@string/accept"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtBirthdate" />
 
@@ -50,10 +51,10 @@
             android:layout_marginStart="170dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="170dp"
+            android:background="@drawable/baseline_calendar_today_black_36dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@drawable/baseline_search_black_24dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
         <TextView
             android:id="@+id/txtViewTitle"
@@ -63,7 +64,8 @@
             android:layout_marginTop="36dp"
             android:layout_marginEnd="28dp"
             android:gravity="center"
-            android:text="Create a user"
+            android:text="@string/create_user"
+            android:textColor="#FFFFFF"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +79,8 @@
             android:layout_marginTop="60dp"
             android:layout_marginEnd="50dp"
             android:gravity="center"
-            android:text="Introduce your birthdate"
+            android:text="@string/introduce_birthdate"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -92,6 +95,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginEnd="100dp"
             android:gravity="center"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

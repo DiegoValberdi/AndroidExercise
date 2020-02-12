@@ -9,21 +9,21 @@ import kotlinx.coroutines.withContext
 
 class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepository) {
 
-    fun init(){
+    fun init() {
         showUsersList()
     }
 
     fun onSearchClicked(userId: Int?) {
         if (userId == null) {
             view.showMessage("Introduce an id for me to do my job please")
-        }else{
+        } else {
             CoroutineScope(Dispatchers.IO).launch {
                 val user = remoteRepository.getOne(userId)
                 withContext(Dispatchers.Main) {
-                    if (user != null){
+                    if (user != null) {
                         val users = listOf(user)
                         view.showUsers(users)
-                    }else{
+                    } else {
                         view.showMessage("This app's creator apologize for the technical problems")
                     }
                 }
@@ -35,9 +35,9 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
         CoroutineScope(Dispatchers.IO).launch {
             val users = remoteRepository.getAll()
             withContext(Dispatchers.Main) {
-                if (users != null){
+                if (users != null) {
                     view.showUsers(users)
-                }else{
+                } else {
                     view.showMessage("This app's creator apologize for the technical problems")
                 }
             }
@@ -61,6 +61,6 @@ class UserListPresenter(val view: UserListView, val remoteRepository: RemoteRepo
 
 interface UserListView {
     fun showUsers(users: List<User>)
-    fun openUserUpdate(user:User)
-    fun showMessage(message:String)
+    fun openUserUpdate(user: User)
+    fun showMessage(message: String)
 }

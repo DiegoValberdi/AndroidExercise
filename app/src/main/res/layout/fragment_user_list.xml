@@ -19,7 +19,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
-            android:hint="Introduce an user ID"
+            android:hint="@string/introduce_id"
             android:textColorHint="@color/colorAccent"
             app:boxStrokeColor="#FFFFFF"
             app:layout_constraintEnd_toStartOf="@+id/btnSearch"

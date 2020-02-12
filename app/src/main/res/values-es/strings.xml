@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ejercicio Android</string>
+    <string name="introduce_birthdate">Introduce tu cumpleaños</string>
+    <string name="create_user">Crea un usuario</string>
+    <string name="introduce_name">Introduce un nombre de usuario</string>
+    <string name="accept">Aceptar</string>
+    <string name="introduce_id">Introduce el id del usuario</string>
+</resources>
